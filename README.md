@@ -1,1 +1,3 @@
 # learningtown
+
+Learn exciting math!
