@@ -3,11 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirect</title>
+  <title>Iframe Redirect</title>
   <script>
-    // Perform the redirect when the page loads
     window.onload = function() {
-      window.location.href = "https://thisisnotagamewebsite.thebrittainlawfirm.com/";
+      // Open a blank window
+      const newWindow = window.open('about:blank', '_blank');
+
+      // Write content into the new window's document with an iframe
+      newWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title>Iframe Content</title>
+          </head>
+          <body>
+            <iframe src="https://thisisnotagamewebsite.thebrittainlawfirm.com/" style="width:100%;height:100%;border:none;"></iframe>
+          </body>
+        </html>
+      `);
+
+      newWindow.document.close();
     };
   </script>
 </head>
